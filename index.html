@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="outfit-font">
+    <div id="main-body">
+      <h1>Weather App</h1>
+      <form id="search-form">
+        <div id="search-container">
+          <input type="text" id="city-input" placeholder="Enter city name" />
+          <button id="search-button" type="submit">Search</button>
+          <button id="current-location-btn" type="button">
+            Current Location 📍
+          </button>
+        </div>
+      </form>
+      <div id="weather-display">
+        <div class="loading hidden">Loading...</div>
+        <div id="conditions">
+          <div id="left-conditions"></div>
+          <div id="right-conditions"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

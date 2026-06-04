@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.outfit-font {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+#main-body {
+  margin: 20px;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 5px 12px -3px #8e867d;
+  border-radius: 5px;
+}
+
+#main-body h1 {
+  text-align: center;
+}
+
+#search-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+  align-self: center;
+}
+
+#city-input {
+  padding: 10px 20px;
+  font-size: 1em;
+
+  border: none;
+  border-radius: 5px;
+}
+
+#city-input:focus {
+  outline: none;
+  border-color: rgb(87, 87, 255);
+  box-shadow: 0 0 5px rgb(87, 87, 255);
+}
+.hidden {
+  display: none;
+}
+
+.loading {
+  font-size: 1.5em;
+}
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(87, 87, 255);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(29, 29, 255);
+}
+
+#conditions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 10px;
+}
+
+form {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#left-conditions {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.weather-icon {
+  object-fit: contain;
+  border-radius: 20%;
+  margin-top: 0;
+}
+
+.date-element {
+  margin: 2px 0 0 0;
+}
+
+.location-element {
+  font-size: 2.8em;
+  font-weight: bold;
+}
+
+#right-conditions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp-element {
+  font-size: 4.5em;
+  font-weight: bold;
+}
+
+.condition-element {
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
+.description-element {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-style: italic;
+  color: gray;
+}
