@@ -7,10 +7,14 @@ const loadingElement = document.querySelector(".loading");
 
 async function fetchWeather(location) {
   // Fetch weather data for a specific location
-  const weatherApi = await fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}??unitGroup=metric&key=3M6G8QARSL8PF3ND52JZMABQS`,
+  const response = await fetch(
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}??unitGroup=metric&key=K5X72JJ2BMJ945ZBCXCN4SGFR`,
   );
-  return weatherApi.json(); // return the JSON response from the API
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return response.json(); // return the JSON response from the API
 }
 function processWeatherData(data) {
   // Process the raw weather data and extract relevant information
@@ -27,18 +31,19 @@ function processWeatherData(data) {
   };
   return weatherInfo;
 }
-
-async function displayWeather(location) {
+function clearWeatherDisplay() {
   leftSection.textContent = "";
   rightSection.textContent = "";
+}
+async function displayWeather(location) {
+  clearWeatherDisplay(); // Clear previous weather data before displaying new data
   // Main function to fetch and display weather information for a given location
   loadingElement.classList.remove("hidden"); // Show loading indicator while fetching data
   try {
     const rawData = await fetchWeather(location);
     const weatherInfo = processWeatherData(rawData);
 
-    leftSection.textContent = "";
-    rightSection.textContent = "";
+    clearWeatherDisplay();
 
     const locationElement = document.createElement("div");
     locationElement.classList.add("location-element");
