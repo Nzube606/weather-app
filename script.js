@@ -8,7 +8,7 @@ const loadingElement = document.querySelector(".loading");
 async function fetchWeather(location) {
   // Fetch weather data for a specific location
   const response = await fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}??unitGroup=metric&key=K5X72JJ2BMJ945ZBCXCN4SGFR`,
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=K5X72JJ2BMJ945ZBCXCN4SGFR`,
   );
 
   if (!response.ok) {
